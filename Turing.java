@@ -9,7 +9,7 @@ public class Turing {
         Turing maquina = new Turing();
         Scanner entrada = new Scanner(System.in); 
         String palavra;
-        System.out.println("Insira a palavra:");
+        System.out.println("Insira a palavra (Com 'X' no final para representar o fim):");
         palavra = entrada.nextLine();
         maquina.Iniciar(palavra);
     }
@@ -122,8 +122,8 @@ public class Turing {
                 cont ++;
                 q5();
             } 
-            else if(fita[cont] == ' ' ){
-                fita[cont] = ' ';
+            else if(fita[cont] == 'X' ){
+                fita[cont] = 'X';
                 cont ++;
                 q6();
             } else {
