@@ -1,21 +1,15 @@
-// TESTE
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.PrintWriter;
+
+
 
 public class Turing {
     
     int cont;
     char fita [];
-    
-    public static void main(String[] args) {
-        Turing maquina = new Turing();
-        Scanner entrada = new Scanner(System.in); 
-        String palavra;
-        System.out.println("Insira a palavra (Com 'X' no final para representar o fim):");
-        palavra = entrada.nextLine();
-        maquina.Iniciar(palavra);
-    }
-
-    
     public void Iniciar(String m){
         cont = 0;
         fita = m.toCharArray();
@@ -30,19 +24,19 @@ public class Turing {
             } else if(fita[cont] == 'B'){
                 fita[cont] = 'B';
                 cont ++;
-                q4();
-            } else{
+                q0();
+            } else if(fita[cont] == 'X'){
+                fita[cont] = ' ';
+                q3();
+            } 
+            else{
                 qErro();
             }
         }
     }
     public void q1(){
         if(cont < fita.length){
-            if(fita[cont] == 'b'){
-                fita[cont] = 'B';
-                cont ++;
-                q2();
-            } else if(fita[cont] == 'a'){
+            if(fita[cont] == 'a'){
                 fita[cont] = 'a';
                 cont ++;
                 q1();
@@ -50,6 +44,10 @@ public class Turing {
                 fita[cont] = 'B';
                 cont ++;
                 q1();
+            } else if(fita[cont] == 'b'){
+                fita[cont] = 'B';
+                cont --;
+                q2();
             } else{
                 qErro();
             }
@@ -57,86 +55,35 @@ public class Turing {
     }
     public void q2(){
         if(cont < fita.length){
-            if(fita[cont] == 'c'){
-                fita[cont] = 'C';
+            if(fita[cont] == 'a'){
+                fita[cont] = 'a';
                 cont --;
-                q3();
-            } else if(fita[cont] == 'b'){
-                fita[cont] = 'b';
-                cont ++;
                 q2();
-            } else if(fita[cont] == 'C'){
-                fita[cont] = 'C';
-                cont ++;
+            } else if(fita[cont] == 'B'){
+                fita[cont] = 'B';
+                cont --;
                 q2();
+            } else if(fita[cont] == 'A'){
+                fita[cont] = 'A';
+                cont ++;
+                q0();
             } else{
                 qErro();
             }
         }
     }
     public void q3(){
-        if(cont < fita.length){
-            if(fita[cont] == 'A'){
-                fita[cont] = 'A';
-                cont ++;
-                q0();
-            } else if(fita[cont] == 'a'){
-                fita[cont] = 'a';
-                cont --;
-                q3();
-            } else if(fita[cont] == 'b'){
-                fita[cont] = 'b';
-                cont --;
-                q3();
-            } else if(fita[cont] == 'A'){
-                fita[cont] = 'A';
-                cont --;
-                q3();
-            } else if(fita[cont] == 'B'){
-                fita[cont] = 'B';
-                cont --;
-                q3();
-            } else {
-                qErro();
-            }
+        System.out.print("Palavra Resultante:\t");
+        for(int i=0; i<fita.length; i++){
+            System.out.print(fita[i]); 
         }
-    }
-    public void q4(){
-        if(cont < fita.length){
-            if(fita[cont] == 'B'){
-                fita[cont] = 'B';
-                cont ++;
-                q4();
-            } else if(fita[cont] == 'C'){
-                fita[cont] = 'C';
-                cont ++;
-                q5();
-            } else{
-                qErro();
-            }  
-        }
-    }
-    public void q5(){
-        if(cont < fita.length){
-            if(fita[cont] == 'C'){
-                fita[cont] = 'C';
-                cont ++;
-                q5();
-            } 
-            else if(fita[cont] == 'X' ){
-                fita[cont] = 'X';
-                cont ++;
-                q6();
-            } else {
-                qErro();
-            }
-            
-        }
-    }
-    public void q6(){
-        System.out.println("Palavra aceita!");
+        System.out.println("\nPalavra Aceita!");
     }
     public void qErro(){
-        System.out.println("Erro!");
+        System.out.print("Palavra Resultante:\t");
+        for(int i=0; i<fita.length; i++){
+            System.out.print(fita[i]);    
+        }
+        System.out.println("\nPalavra não aceita!");
     }
 }
