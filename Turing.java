@@ -10,6 +10,8 @@ public class Turing {
     
     int cont;
     char fita [];
+    String resultante = "";
+
     public void Iniciar(String m){
         cont = 0;
         fita = m.toCharArray();
@@ -73,17 +75,17 @@ public class Turing {
         }
     }
     public void q3(){
-        System.out.print("Palavra Resultante:\t");
+        System.out.print("\nPalavra Resultante:\t");
         for(int i=0; i<fita.length; i++){
             System.out.print(fita[i]); 
         }
         System.out.println("\nPalavra Aceita!");
     }
     public void qErro(){
-        System.out.print("Palavra Resultante:\t");
+        System.out.print("\nPalavra Resultante:\t");
         for(int i=0; i<fita.length; i++){
             System.out.print(fita[i]);    
         }
-        System.out.println("\nPalavra não aceita!");
+        System.out.println("\nPalavra não aceita!\n");
     }
 }
