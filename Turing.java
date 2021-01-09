@@ -1,8 +1,6 @@
-import java.io.BufferedReader;
 import java.io.BufferedWriter;
-import java.io.FileReader;
 import java.io.FileWriter;
-import java.io.PrintWriter;
+import java.io.IOException;
 
 
 
@@ -12,12 +10,12 @@ public class Turing {
     char fita [];
     String resultante = "";
 
-    public void Iniciar(String m){
+    public void Iniciar(String m) throws IOException{
         cont = 0;
         fita = m.toCharArray();
         q0();
     }
-    public void q0(){
+    public void q0() throws IOException{
         if(cont < fita.length){
             if(fita[cont] == 'a'){
                 fita[cont] = 'A';
@@ -36,7 +34,7 @@ public class Turing {
             }
         }
     }
-    public void q1(){
+    public void q1() throws IOException{
         if(cont < fita.length){
             if(fita[cont] == 'a'){
                 fita[cont] = 'a';
@@ -55,7 +53,7 @@ public class Turing {
             }
         }
     }
-    public void q2(){
+    public void q2() throws IOException{
         if(cont < fita.length){
             if(fita[cont] == 'a'){
                 fita[cont] = 'a';
@@ -74,18 +72,22 @@ public class Turing {
             }
         }
     }
-    public void q3(){
+    public void q3 () throws IOException{
         System.out.print("\nPalavra Resultante:\t");
-        for(int i=0; i<fita.length; i++){
-            System.out.print(fita[i]); 
-        }
+        String string = new String(fita);
+        System.out.println(string);
+        BufferedWriter escrita = new BufferedWriter(new FileWriter("finalFile.txt"));
+        escrita.append(string);
+		escrita.close();
         System.out.println("\nPalavra Aceita!");
     }
-    public void qErro(){
+    public void qErro() throws IOException{
         System.out.print("\nPalavra Resultante:\t");
-        for(int i=0; i<fita.length; i++){
-            System.out.print(fita[i]);    
-        }
+        String string = new String(fita);
+        System.out.println(string);
+        BufferedWriter escrita = new BufferedWriter(new FileWriter("finalFile.txt"));
+        escrita.append(string);
+		escrita.close();
         System.out.println("\nPalavra não aceita!\n");
     }
 }
