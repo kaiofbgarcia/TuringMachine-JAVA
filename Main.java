@@ -1,35 +1,31 @@
 import java.io.BufferedReader;
-import java.io.BufferedWriter;
 import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.PrintWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) throws IOException {
         int menu;
-		do{
-            Scanner in = new Scanner(System.in);
-		System.out.println("\nEscolha uma opção:\n1) Analisar palavra contida no arquivo.\n2) Mostrar a Função Programa da MT.\n3) Sair.\n");
-		menu = in.nextInt();
-        
-        switch (menu){
-            case 1:
-                Turing maquina = new Turing();
-                FileReader txtFile = new FileReader("enterFile.txt");
-                BufferedReader txtBuffer = new BufferedReader(txtFile); 
-                String palavra = txtBuffer.readLine();
-                maquina.Iniciar(palavra);
-                break;
-            case 2: 
-                printFuncaoPrograma();
-                break;
-            case 3: 
-                System.out.println("\nFim!\n");
-                break;
-        }
-        } while(menu != 3);  
+	do{
+		Scanner in = new Scanner(System.in);
+			System.out.println("\nEscolha uma opção:\n1) Analisar palavra contida no arquivo.\n2) Mostrar a Função Programa da MT.\n3) Sair.\n");
+			menu = in.nextInt();
+        	switch (menu){
+            	case 1:
+                	Turing maquina = new Turing();
+                	FileReader txtFile = new FileReader("enterFile.txt");
+                	BufferedReader txtBuffer = new BufferedReader(txtFile); 
+                	String palavra = txtBuffer.readLine();
+                	maquina.Iniciar(palavra);
+                	break;
+            	case 2: 
+                	printFuncaoPrograma();
+                	break;
+            	case 3: 
+                	System.out.println("\nFim!\n");
+                	break;
+        	}
+	} while(menu != 3);  
     }
 
     public static void printFuncaoPrograma(){
