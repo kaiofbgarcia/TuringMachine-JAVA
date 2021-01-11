@@ -80,7 +80,13 @@ public class Turing {
         System.out.println("\nPalavra Aceita!");
     }
     public void qErro() throws IOException{
-        System.out.print("\nPalavra Resultante:\t");
+        do{
+            cont ++;
+        } while(fita[cont] != 'X');
+        if(fita[cont] == 'X'){
+                fita[cont] = ' ';
+        }
+	System.out.print("\nPalavra Resultante:\t");
         String string = new String(fita);
         System.out.println(string);
         BufferedWriter escrita = new BufferedWriter(new FileWriter("finalFile.txt"));
