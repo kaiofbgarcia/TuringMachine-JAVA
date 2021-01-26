@@ -13,7 +13,7 @@ public class Main {
         	switch (menu){
             	case 1:
                 	Turing maquina = new Turing();
-                	FileReader txtFile = new FileReader("enterFile.txt");
+                	FileReader txtFile = new FileReader("Arquivos/enterFile.txt");
                 	BufferedReader txtBuffer = new BufferedReader(txtFile); 
                 	String palavra = txtBuffer.readLine();
                 	maquina.Iniciar(palavra);
