@@ -29,11 +29,7 @@ public class Main {
     }
 
     public static void printFuncaoPrograma(){
-        System.out.println("\nδ\t|\ta\t|\tb\t|\tA\t|\tB\t|\tX");
-        System.out.println("q0\t| q1,A,D|\t\t|\t\t| q0,B,D| q3,X,D");
-        System.out.println("q1\t| q1,a,D| q2,B,E|\t\t| q1,B,D| ");
-        System.out.println("q2\t| q2,a,E|\t\t| q0,A,D| q2,B,E|");
-        System.out.println("q3\t|\t\t|\t\t|\t\t|\t\t|");
+        System.out.println("\nA Função Programa está disponivel numa planilha (.xlsx) ou em formato de imagem (.jpg) que pode ser encontrada no git hub: https://github.com/kaiofbgarcia/TuringMachine-JAVA/tree/main/FuncaoPrograma");
     }
 }
 
