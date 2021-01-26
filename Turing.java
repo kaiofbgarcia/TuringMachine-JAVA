@@ -114,17 +114,17 @@ public class Turing {
     }
     public void qErro() throws IOException{
         do{
-            cont ++;
+        	cont ++;
         } while(fita[cont] != 'X');
         if(fita[cont] == 'X'){
-                fita[cont] = ' ';
+        	fita[cont] = ' ';
         }
         System.out.print("\nPalavra Resultante:\t");
         String palavraFinal = new String(fita);
         System.out.println(palavraFinal);
         BufferedWriter escrita = new BufferedWriter(new FileWriter("finalFile.txt"));
         escrita.append(palavraFinal);
-		escrita.close();
+	escrita.close();
         System.out.println("\nPalavra não aceita!\n");
     }
 }
