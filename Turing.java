@@ -2,6 +2,8 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 
+
+
 public class Turing {
     
     int cont;
@@ -23,9 +25,13 @@ public class Turing {
                 fita[cont] = 'B';
                 cont ++;
                 q0();
-            } else if(fita[cont] == 'X'){
+            } else if(fita[cont] == 'C'){
+                fita[cont] = 'C';
+                cont ++;
+                q0();
+            }else if(fita[cont] == 'X'){
                 fita[cont] = ' ';
-                q3();
+                q4();
             } 
             else{
                 qErro();
@@ -44,7 +50,7 @@ public class Turing {
                 q1();
             } else if(fita[cont] == 'b'){
                 fita[cont] = 'B';
-                cont --;
+                cont ++;
                 q2();
             } else{
                 qErro();
@@ -53,29 +59,56 @@ public class Turing {
     }
     public void q2() throws IOException{
         if(cont < fita.length){
-            if(fita[cont] == 'a'){
-                fita[cont] = 'a';
+            if(fita[cont] == 'c'){
+                fita[cont] = 'C';
                 cont --;
-                q2();
-            } else if(fita[cont] == 'B'){
-                fita[cont] = 'B';
-                cont --;
-                q2();
-            } else if(fita[cont] == 'A'){
-                fita[cont] = 'A';
+                q3();
+            } else if(fita[cont] == 'b'){
+                fita[cont] = 'b';
                 cont ++;
-                q0();
+                q2();
+            } else if(fita[cont] == 'C'){
+                fita[cont] = 'C';
+                cont ++;
+                q2();
             } else{
                 qErro();
             }
         }
     }
-    public void q3 () throws IOException{
+    public void q3() throws IOException{
+        if(cont < fita.length){
+            if(fita[cont] == 'A'){
+                fita[cont] = 'A';
+                cont ++;
+                q0();
+            } else if(fita[cont] == 'a'){
+                fita[cont] = 'a';
+                cont --;
+                q3();
+            }else if(fita[cont] == 'b'){
+                fita[cont] = 'b';
+                cont --;
+                q3();
+            } else if(fita[cont] == 'B'){
+                fita[cont] = 'B';
+                cont --;
+                q3();
+            }else if(fita[cont] == 'C'){
+                fita[cont] = 'C';
+                cont --;
+                q3();
+            } else{
+                qErro();
+            }
+        }
+    }
+    public void q4 () throws IOException{
         System.out.print("\nPalavra Resultante:\t");
-        String string = new String(fita);
-        System.out.println(string);
+        String palavraFinal = new String(fita);
+        System.out.println(palavraFinal);
         BufferedWriter escrita = new BufferedWriter(new FileWriter("finalFile.txt"));
-        escrita.append(string);
+        escrita.append(palavraFinal);
 		escrita.close();
         System.out.println("\nPalavra Aceita!");
     }
@@ -86,11 +119,11 @@ public class Turing {
         if(fita[cont] == 'X'){
                 fita[cont] = ' ';
         }
-	System.out.print("\nPalavra Resultante:\t");
-        String string = new String(fita);
-        System.out.println(string);
+        System.out.print("\nPalavra Resultante:\t");
+        String palavraFinal = new String(fita);
+        System.out.println(palavraFinal);
         BufferedWriter escrita = new BufferedWriter(new FileWriter("finalFile.txt"));
-        escrita.append(string);
+        escrita.append(palavraFinal);
 		escrita.close();
         System.out.println("\nPalavra não aceita!\n");
     }
