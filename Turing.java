@@ -122,7 +122,7 @@ public class Turing {
         System.out.print("\nPalavra Resultante:\t");
         String palavraFinal = new String(fita);
         System.out.println(palavraFinal);
-        BufferedWriter escrita = new BufferedWriter(new FileWriter("finalFile.txt"));
+        BufferedWriter escrita = new BufferedWriter(new FileWriter("Arquivos/finalFile.txt"));
         escrita.append(palavraFinal);
 	escrita.close();
         System.out.println("\nPalavra não aceita!\n");
