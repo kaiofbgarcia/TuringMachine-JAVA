@@ -24,15 +24,12 @@ public class Turing {
             } else if(fita[cont] == 'B'){
                 fita[cont] = 'B';
                 cont ++;
-                q0();
+                q4();
             } else if(fita[cont] == 'C'){
                 fita[cont] = 'C';
                 cont ++;
-                q0();
-            }else if(fita[cont] == 'X'){
-                fita[cont] = ' ';
                 q4();
-            } 
+            }
             else{
                 qErro();
             }
@@ -103,28 +100,42 @@ public class Turing {
             }
         }
     }
-    public void q4 () throws IOException{
+    public void q4() throws IOException{
+        if(fita[cont] == 'X'){
+            fita[cont] = ' ';
+            q5();
+        } else if(fita[cont] == 'B'){
+            fita[cont] = 'B';
+            cont ++;
+            q4();
+        }else if(fita[cont] == 'C'){
+            fita[cont] = 'C';
+            cont ++;
+            q4();
+        }
+    }
+    public void q5 () throws IOException{
+        System.out.println("\nPalavra Aceita!");
         System.out.print("\nPalavra Resultante:\t");
         String palavraFinal = new String(fita);
         System.out.println(palavraFinal);
         BufferedWriter escrita = new BufferedWriter(new FileWriter("finalFile.txt"));
         escrita.append(palavraFinal);
 		escrita.close();
-        System.out.println("\nPalavra Aceita!");
     }
     public void qErro() throws IOException{
         do{
-        	cont ++;
+            cont ++;
         } while(fita[cont] != 'X');
         if(fita[cont] == 'X'){
-        	fita[cont] = ' ';
+                fita[cont] = ' ';
         }
+        System.out.println("\nPalavra não aceita!\n");
         System.out.print("\nPalavra Resultante:\t");
         String palavraFinal = new String(fita);
         System.out.println(palavraFinal);
         BufferedWriter escrita = new BufferedWriter(new FileWriter("Arquivos/finalFile.txt"));
         escrita.append(palavraFinal);
-	escrita.close();
-        System.out.println("\nPalavra não aceita!\n");
+		escrita.close();
     }
 }
