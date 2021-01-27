@@ -29,7 +29,7 @@ public class Main {
     }
 
     public static void printFuncaoPrograma(){
-        System.out.println("\nA Função Programa está disponivel numa planilha (.xlsx) ou em formato de imagem (.jpg) que pode ser encontrada no git hub: https://github.com/kaiofbgarcia/TuringMachine-JAVA/tree/main/FuncaoPrograma");
+        System.out.println("\nA Função Programa está disponivel em formato de planilha (.xlsx) ou em formato de imagem (.jpg) que pode ser encontrada no git hub: https://github.com/kaiofbgarcia/TuringMachine-JAVA/tree/main/FuncaoPrograma");
     }
 }
 
