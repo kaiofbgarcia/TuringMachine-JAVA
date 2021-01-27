@@ -121,7 +121,7 @@ public class Turing {
         System.out.println(palavraFinal);
         BufferedWriter escrita = new BufferedWriter(new FileWriter("finalFile.txt"));
         escrita.append(palavraFinal);
-		escrita.close();
+	escrita.close();
     }
     public void qErro() throws IOException{
         do{
@@ -136,6 +136,6 @@ public class Turing {
         System.out.println(palavraFinal);
         BufferedWriter escrita = new BufferedWriter(new FileWriter("Arquivos/finalFile.txt"));
         escrita.append(palavraFinal);
-		escrita.close();
+	escrita.close();
     }
 }
