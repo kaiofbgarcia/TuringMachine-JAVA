@@ -119,8 +119,9 @@ public class Turing {
         System.out.print("\nPalavra Resultante:\t");
         String palavraFinal = new String(fita);
         System.out.println(palavraFinal);
-        BufferedWriter escrita = new BufferedWriter(new FileWriter("finalFile.txt"));
+        BufferedWriter escrita = new BufferedWriter(new FileWriter("Arquivos/finalFile.txt"));
         escrita.append(palavraFinal);
+	escrita.append("\n\nPALAVRA ACEITA!!!!");
 	escrita.close();
     }
     public void qErro() throws IOException{
@@ -136,6 +137,7 @@ public class Turing {
         System.out.println(palavraFinal);
         BufferedWriter escrita = new BufferedWriter(new FileWriter("Arquivos/finalFile.txt"));
         escrita.append(palavraFinal);
+	escrita.append("\n\nPALAVRA NÃO ACEITA!!!!");
 	escrita.close();
     }
 }
